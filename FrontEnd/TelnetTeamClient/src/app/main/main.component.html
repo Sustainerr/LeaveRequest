@@ -1,0 +1,56 @@
+<mat-toolbar>
+  <img src="assets/logo.png" alt="Logo" class="logo">
+  <button mat-icon-button (click)="sidenav.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <div class="user-info">
+    <img src="assets/avatar.png" alt="Avatar" class="avatar">
+    <button mat-button [matMenuTriggerFor]="menu">{{ userData?.prenom }} {{ userData?.nom }}</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Disconnect</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" class="sidenav">
+    <div class="user-profile">
+      <div class="user-bg">
+        <img src="assets/avatar.png" alt="Avatar" class="avatar-large">
+        <div class="user-name">{{ userData?.prenom }} {{ userData?.nom }}</div>
+      </div>
+    </div>
+    <mat-nav-list>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon>date_range</mat-icon> Leave Requests
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item (click)="manageRequests()">Manage Your Requests</mat-list-item>
+          <mat-list-item
+            (click)="approveRejectRequests()"
+            [ngClass]="{'disabled-item': userData?.role !== 'Chef' && userData?.role !== 'Admin'}">
+            Approve/Reject Requests
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-list-item>
+        <mat-icon>assignment</mat-icon> Authorization
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="content-container">
+    <div class="content-bg"></div>
+    <div class="content-inner">
+      <!-- Add your main content here -->
+      <app-table-paginator *ngIf="selectedOption === 'manage-requests'"></app-table-paginator>
+      <app-table-paginator-chef *ngIf="selectedOption === 'approve-reject-requests'"></app-table-paginator-chef>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
