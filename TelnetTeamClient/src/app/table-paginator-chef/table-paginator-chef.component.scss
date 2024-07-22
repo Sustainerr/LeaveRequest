@@ -1,0 +1,103 @@
+.table-controls {
+    display: flex;
+    justify-content: space-between; /* Ensure space between buttons and paginator */
+    align-items: center;
+    gap: 8px; /* Space between the buttons */
+    margin-bottom: 16px; /* Space between buttons and paginator */
+    padding: 16px; /* Padding around the paginator section */
+    background-color: white; /* White background for the paginator section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add some shadow for better visual separation */
+}
+
+.button-group {
+    display: flex;
+    gap: 8px; /* Space between the buttons */
+}
+
+.table-controls button {
+    background-color: #3f629d !important;
+    color: white !important;
+    border-radius: 4px !important; /* Rounded corners for buttons */
+}
+
+.table-controls button mat-icon {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.table-container {
+    width: 100% !important;
+    
+}
+
+table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-radius: 8px; /* Rounded corners for the table */
+    overflow: hidden; /* Ensure rounding is visible */
+    margin-left: 8px; /* Move the entire table content slightly to the right */
+}
+
+th.mat-header-cell,
+td.mat-cell {
+    border: none; /* Remove the borders between columns */
+    padding: 8px 16px !important; /* Move content to the right and adjust padding */
+}
+
+th.mat-header-cell {
+    background-color: #3f629d !important;
+    color: white !important;
+    border-top: 1px solid #3f629d; /* Add border for rounded effect */
+    border-bottom: 1px solid #3f629d; /* Add border for rounded effect */
+}
+
+th.mat-header-cell:first-child {
+    border-top-left-radius: 8px; /* Rounded top-left corner */
+}
+
+th.mat-header-cell:last-child {
+    border-top-right-radius: 8px; /* Rounded top-right corner */
+}
+
+td.mat-cell {
+    background-color: white !important;
+    vertical-align: middle !important; /* Ensure cell content is vertically centered */
+}
+
+tr:last-child td.mat-cell:first-child {
+    border-bottom-left-radius: 8px; /* Rounded bottom-left corner */
+}
+
+tr:last-child td.mat-cell:last-child {
+    border-bottom-right-radius: 8px; /* Rounded bottom-right corner */
+}
+
+/* New styles for action buttons */
+.mat-column-actions {
+    text-align: center !important;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensure buttons are vertically centered */
+    gap: 4px; /* Add space between buttons */
+}
+
+.action-buttons button {
+    height: 36px; /* Adjust to match the cell height */
+    width: 36px; /* Ensure consistent button width */
+    margin: 0; /* Remove any additional margin */
+    padding: 0; /* Remove any additional padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-4px); /* Move the buttons higher */
+    border-radius: 50%; /* Make buttons circular */
+}
+
+.action-buttons button mat-icon {
+    font-size: 24px; /* Adjust the icon size */
+    line-height: 36px; /* Adjust the line-height to match button height */
+}

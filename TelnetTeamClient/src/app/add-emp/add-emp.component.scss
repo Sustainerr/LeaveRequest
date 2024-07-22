@@ -1,0 +1,38 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px;
+  }
+  
+  .date-inputs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  
+  .date-inputs .form-group {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .date-inputs .form-group:last-child {
+    margin-right: 0;
+  }
+  
+  .type-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+  

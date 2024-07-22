@@ -1,0 +1,85 @@
+<div class="wrapper">
+  <!-- Header Section -->
+  <div class="header-container">
+    <header class="header-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <img src="assets/images/logo.png" alt="logo.png" class="centered-logo">
+          </div>
+          <div class="col-sm-6 text-right">
+            <div class="user-info">
+              <span>{{ userData?.prenom }} {{ userData?.nom }}</span>
+              <a href="#" class="sign-out" (click)="logout()">Se deconnecter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Navigation Section -->
+  <nav class="navbar custom-navbar">
+    <div class="container">
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="#">Acceuil</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" (click)="openaddemp($event)">Ajouter un Congé</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Historique des congés</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Ajouter une autorisation</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Historique des autorisations</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content Section -->
+  <section class="dashboard-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>Gestion des Congés et des autorisations</h2>
+          <p>Bienvenue, {{ userData?.prenom }} {{ userData?.nom }}</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <!-- Quick Links or Summary Cards -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-header">Leave Balance</div>
+            <div class="card-body">
+              <p>Nombre de congé(s) disponible(s): {{ userData?.congesDispo }}</p>
+              <p>Nombre d'autorisation(s) disponible(s): {{ userData?.autorisationDispo }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-header">Demande(s) en attente</div>
+            <div class="card-body">
+              <!-- les demandes en attente. -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-header">Congés à venir</div>
+            <div class="card-body">
+              <!-- les conges prevu en attente. -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 centered-card">
+            <div class="card-header">Autorisations à venir</div>
+            <div class="card-body">
+              <!-- les autorisations prevu en attente. -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

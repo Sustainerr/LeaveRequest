@@ -1,0 +1,22 @@
+<div class="form-container">
+  <form [formGroup]="leaveForm" (ngSubmit)="onSubmit()">
+    <div class="date-inputs">
+      <div class="form-group">
+        <label for="dateDebut">Date Debut:</label>
+        <input type="date" id="dateDebut" formControlName="dateDebut" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="dateFin">Date Fin:</label>
+        <input type="date" id="dateFin" formControlName="dateFin" class="form-control" required>
+      </div>
+    </div>
+    <div class="form-group type-input">
+      <label for="type">Type:</label>
+      <select id="type" formControlName="type" class="form-control" required>
+        <option value="" disabled>Select Type</option>
+        <option *ngFor="let type of leaveTypes" [value]="type.type_Conge_Id">{{ type.type }}</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="leaveForm.invalid">Add Employee</button>
+  </form>
+</div>
