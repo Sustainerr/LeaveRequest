@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Q5V4HWV7ysn/IayJD58NZFrkTG95wMxIdPrUi1AhY0U=",
+  "Source": "TelnetTeamClient",
+  "BasePath": "_content/TelnetTeamClient",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
